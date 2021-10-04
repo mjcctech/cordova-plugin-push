@@ -962,6 +962,11 @@ public class FCMService extends FirebaseMessagingService implements PushConstant
           }
         }
       }
+    } else {
+      if (iconId == 0) {
+        Log.d(LOG_TAG, "no large icon resource provided - using application icon");
+        iconId = context.getApplicationInfo().icon;
+      }
     }
   }
 
